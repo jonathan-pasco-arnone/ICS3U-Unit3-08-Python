@@ -11,25 +11,26 @@ def main():
     print("")
     print("This program determines whether it is a leap year or not.")
     print("")
-    year = int(input("Please input the year: "))
+    year_str = input("Please input the year: ")
 
-    if year % 4 == 0:
-        if year % 100 == 0:
-            if year % 400 == 0:
-                if year == str(year):
-                    print("Invalid Input")
-
-                else:
+    try:
+        year = int(year_str)
+    except Exception:
+        print("Invalid Input")
+    else:
+        if year % 4 == 0:
+            if year % 100 == 0:
+                if year % 400 == 0:
                     print("It is a leap year")
 
+                else:
+                    print("It is a common year")
+
             else:
-                print("It is a common year")
+                print("It is a leap year")
 
         else:
-            print("It is a leap year")
-
-    else:
-        print("It is a common year")
+            print("It is a common year")
 
 
 if __name__ == "__main__":
